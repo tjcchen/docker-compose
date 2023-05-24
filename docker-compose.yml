@@ -12,6 +12,7 @@ services:
     depends_on: 
       - db
     build: ./backend
+    user: root
     ports: 
       - 3001:3001
     environment: 
