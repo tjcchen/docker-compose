@@ -32,6 +32,25 @@ Compose is a tool for defining and running multi-container Docker applications. 
 ```sh
 # build with docker-compose.yml file
 docker-compose up
+
+# check docker compose build arguments
+docker-compose build --help
+
+# build without cache( by default docker-compose will use cache )
+docker-compose build --no-cache
+
+# pull a newer version of the image
+docker-compose build --pull
+
+# docker-compose build( could build multiple images in one go )
+docker-compose build
+
+# image name explanations
+folder / repository name + service name
+docker-compose-frontend
+docker-compose-backend
+docker-compose-web
+docker-compose-api
 ```
 
 ## License
