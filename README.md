@@ -1,5 +1,5 @@
 ## docker-compose
-A docker project with frontend, backend and database modules.
+A full stack project with frontend, backend and database modules.
 
 ## MongoDB
 ```sh
