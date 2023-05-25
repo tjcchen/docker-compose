@@ -17,6 +17,13 @@ services:
       DB_URL: mongodb://db/vidly
     volumes:
       - ./backend:/app
+    # approach1:
+    # override the npm start command in ./backend/Dockerfile
+    # but we need to wait for the db container is up, so need to use a waiting script
+    # command: ./wait-for db:27017 && migrate-mongo up && npm start
+
+    # approach2: to use a docker-entrypoint.sh file to wait for mongoDB start
+    command: ./docker-entrypoint.sh
   db:
     image: mongo:4.0-xenial
     ports:

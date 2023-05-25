@@ -106,6 +106,18 @@ docker logs 393 -f
 volumes:
   - ./backend:/app
 
+# migrating the database
+
+# dependency - migrate-mongo
+migrate-mongo up
+
+# docker wait for DB container
+command: ./wait-for db:27017 && migrate-mongo up && npm start
+command: ./docker-entrypoint.sh
+
+# remove unused volume
+docker volume ls
+docker volume rm docker-compose_vidly
 
 ```
 
