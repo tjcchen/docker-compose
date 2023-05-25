@@ -4,9 +4,9 @@ A full stack project with frontend, backend and database modules.
 ## MongoDB
 ```sh
 # run mongod as a service
-Install: brew tap mongodb/brew
-Start: brew services start mongodb-community
-Stop: brew services stop mongodb-community
+install: brew tap mongodb/brew
+start: brew services start mongodb-community
+stop: brew services stop mongodb-community
 
 # login locally
 mongosh
@@ -51,6 +51,27 @@ docker-compose-frontend
 docker-compose-backend
 docker-compose-web
 docker-compose-api
+
+# starting and stoping the application
+
+# check docker-compose up arguments
+docker-compose up --help
+
+# starting
+docker-compose up
+
+# build and up
+docker-compose up --build
+
+# in detached mode
+docker-compose up -d
+
+# check processes
+docker-compose ps
+
+# stoping( after running in detach mode )
+docker-compose down
+
 ```
 
 ## License
