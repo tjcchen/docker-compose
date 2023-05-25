@@ -44,6 +44,10 @@ function App() {
 
   useEffect(() => fetchMovies(), []);
 
+  useEffect(() => {
+    console.log('Hello Docker!');
+  }, []);
+
   return (
     <div className="App">
       <MovieForm onAddMovie={handleAddMovie} />

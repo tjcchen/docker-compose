@@ -100,6 +100,13 @@ docker-compose logs
 docker ps
 docker logs 393 -f
 
+# publishing changes
+
+# adding volumes config in our docker-compose.yml( under the service level ) 
+volumes:
+  - ./backend:/app
+
+
 ```
 
 ## License
