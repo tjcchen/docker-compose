@@ -119,6 +119,15 @@ command: ./docker-entrypoint.sh
 docker volume ls
 docker volume rm docker-compose_vidly
 
+# running automated tests
+
+# frontend
+web-tests:
+  image: docker-compose-web
+  volumes:
+    - ./frontend:/app
+  command: npm test
+
 ```
 
 ## License

@@ -8,6 +8,11 @@ services:
       - 3000:3000
     volumes:
       - ./frontend:/app
+  web-tests:
+    image: docker-compose-web
+    volumes:
+      - ./frontend:/app
+    command: npm test
   api:
     build: ./backend
     ports:
@@ -30,6 +35,14 @@ services:
       - 27017:27017
     volumes:
       - vidly:/data/db
+
+  # api-tests:
+  #   image: docker-compose-api
+  #   depends_on: 
+  #     - db
+  #   volumes:
+  #     - ./backend:/app
+  #   command: npm test
 
 # define a volume, please note the syntax
 volumes:
