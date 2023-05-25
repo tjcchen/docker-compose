@@ -72,6 +72,22 @@ docker-compose ps
 # stoping( after running in detach mode )
 docker-compose down
 
+# docker networking
+
+# when start a application, we can see a network is created by default
+docker-compose up -d
+
+# list all networks( current running network is `docker-compose_default` )
+docker network ls
+
+# ping other running containers inside a container
+docker ps
+docker exec -it -u root 380 sh
+ping api   # succeeded( IP: 172.19.0.4 )
+ping web   # succeeded( IP: 172.19.0.3 )
+ping db    # succeeded( IP: 172.19.0.2 )
+ifconfig   # check current network
+
 ```
 
 ## License
