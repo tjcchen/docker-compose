@@ -80,13 +80,25 @@ docker-compose up -d
 # list all networks( current running network is `docker-compose_default` )
 docker network ls
 
-# ping other running containers inside a container
+# ping other running containers/hosts inside a container
 docker ps
 docker exec -it -u root 380 sh
 ping api   # succeeded( IP: 172.19.0.4 )
 ping web   # succeeded( IP: 172.19.0.3 )
 ping db    # succeeded( IP: 172.19.0.2 )
 ifconfig   # check current network
+
+# viewing the logs
+
+# checking logs arguments
+docker-compose logs --help
+
+# list all logs
+docker-compose logs
+
+# check specific container logs, like web, db, api etc.( -f: in following mode )
+docker ps
+docker logs 393 -f
 
 ```
 
