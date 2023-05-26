@@ -5,13 +5,13 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+ENV REACT_APP_API_URL=http://143.198.157.42:3001/api
 RUN npm run build
 
 # step 2: production stage
 # /usr/share/nginx/html is standard path for nginx
+# [fix later] due to the permission issue, we temporarily remove app user setting
 FROM nginx:1.12-alpine AS production-stage
-RUN addgroup app && adduser -S -G app app
-USER app
 COPY --from=build-stage /app/build /usr/share/nginx/html
 EXPOSE 80
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]

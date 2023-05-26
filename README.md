@@ -191,6 +191,26 @@ services:
 # build with prod file with docker-compose
 docker-compose -f docker-compose.prod.yml build
 
+# deploying the application
+
+# check digitalocean vps
+docker-machine ls
+
+# check environment variables
+docker-machine env vidly
+
+# configure your local shell:
+eval $(docker-machine env vidly)
+
+# use prod config compose
+docker-compose -f docker-compose.prod.yml up -d
+
+# [important] check why server isn't up by looking at logs
+docker ps
+docker logs 39dccb0087fd
+
+# modify code and rebuild application
+docker-compose -f docker-compose.prod.yml up -d --build
 
 ```
 
