@@ -170,6 +170,28 @@ docker-machine ssh yourMachineName
 doc link: https://docs.docker.com/compose/compose-file/compose-file-v3/#restart
 restart: unless-stopped
 
+# reducing image size
+
+# nginx config
+doc link: https://hub.docker.com/_/nginx
+
+# build frontend optimize image with Dockerfile.prod
+inside frontend folder: docker build -t vidly_web_opt -f Dockerfile.prod .
+
+# modify frontend config in docker-compose.prod.yml( build and port config )
+services:
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    ports:
+      - 80:80
+    restart: unless-stopped
+
+# build with prod file with docker-compose
+docker-compose -f docker-compose.prod.yml build
+
+
 ```
 
 ## License
