@@ -127,6 +127,20 @@ web-tests:
   volumes:
     - ./frontend:/app
   command: npm test
+```
+
+## Docker Deployment
+```sh
+# virtual private server options( VPS )
+Digital Ocean
+Google Cloud Platform
+Microsoft Azure
+Amazon Web Services( AWS )
+
+# Install Docker Machine
+Link: https://github.com/docker/machine/releases
+docker-machine --version
+
 
 ```
 
