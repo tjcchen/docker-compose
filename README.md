@@ -141,6 +141,34 @@ Amazon Web Services( AWS )
 Link: https://github.com/docker/machine/releases
 docker-machine --version
 
+# docker-machine commands
+docker-machine ls
+docker-machine rm -f <machinename>
+
+# digitalocean setting
+create api token: https://cloud.digitalocean.com/account/api/tokens?i=29ec06
+
+# full commands of create digitalocean VPS( after creating, we can check the vps host from digitalocean website )
+docker-machine create \
+--driver digitalocean
+--digitalocean-access-token <token> \
+--digitalocean-image ubuntu-20-04-x64 \
+--digitalocean-region sfo3 \
+--engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \
+yourMachineName
+
+# docker swarm = docker cluster
+
+# connecting to the Host
+
+# using ssh( secure shell )
+docker-machine ssh yourMachineName
+
+# defining the production configuration
+
+# define a docker-compose.prod.yml file for production
+doc link: https://docs.docker.com/compose/compose-file/compose-file-v3/#restart
+restart: unless-stopped
 
 ```
 
