@@ -199,19 +199,19 @@ docker-machine ls
 # check environment variables
 docker-machine env vidly
 
-# configure your local shell:
+# configure your local shell( will login to remote server locally ):
 eval $(docker-machine env vidly)
 
 # use prod config compose
 docker-compose -f docker-compose.prod.yml up -d
 
-# [important] check why server isn't up by looking at logs
+# [important] check why server isn't up by looking at specific logs
+docker-compose logs( all logs )
 docker ps
-docker logs 39dccb0087fd
+docker logs 39dccb0087fd( specific logs )
 
 # modify code and rebuild application
 docker-compose -f docker-compose.prod.yml up -d --build
-
 ```
 
 ## License
