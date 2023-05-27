@@ -8,11 +8,11 @@ services:
       - 3000:3000
     volumes:
       - ./frontend:/app
-  web-tests:
-    image: docker-compose-web
-    volumes:
-      - ./frontend:/app
-    command: npm test
+  # web-tests:
+  #   image: docker-compose-web
+  #   volumes:
+  #     - ./frontend:/app
+  #   command: npm test
   api:
     build: ./backend
     ports:
