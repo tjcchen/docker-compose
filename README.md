@@ -214,6 +214,19 @@ docker logs 39dccb0087fd( specific logs )
 docker-compose -f docker-compose.prod.yml up -d --build
 ```
 
+## Backend and Frontend Port
+```sh
+# backend( need to start mongo service first )
+# api
+http://localhost:3001/api/
+
+# movies
+http://localhost:3001/api/movies
+
+# frontend
+http://localhost:3000/
+```
+
 ## Notice
 We need to switch node version 16.0 and below to run this backend service.
 
