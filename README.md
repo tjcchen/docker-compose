@@ -1,6 +1,22 @@
 ## docker-compose
 A full stack project with frontend, backend and database modules.
 
+## Backend and Frontend Services
+```sh
+# live
+website: http://165.227.208.72/
+
+# local: backend( need to start mongo service first )
+# api
+http://localhost:3001/api/
+
+# movies
+http://localhost:3001/api/movies
+
+# frontend
+http://localhost:3000/
+```
+
 ## MongoDB
 ```sh
 # run mongod as a service
@@ -37,6 +53,7 @@ docker-compose up
 docker-compose build --help
 
 # build without cache( by default docker-compose will use cache )
+# [note] this command can fix weird build issues
 docker-compose build --no-cache
 
 # pull a newer version of the image
@@ -150,7 +167,7 @@ create api token: https://cloud.digitalocean.com/account/api/tokens?i=29ec06
 
 # full commands of create digitalocean VPS( after creating, we can check the vps host from digitalocean website )
 docker-machine create \
---driver digitalocean
+--driver digitalocean \
 --digitalocean-access-token <token> \
 --digitalocean-image ubuntu-20-04-x64 \
 --digitalocean-region sfo3 \
@@ -212,19 +229,6 @@ docker logs 39dccb0087fd( specific logs )
 
 # modify code and rebuild application
 docker-compose -f docker-compose.prod.yml up -d --build
-```
-
-## Backend and Frontend Port
-```sh
-# backend( need to start mongo service first )
-# api
-http://localhost:3001/api/
-
-# movies
-http://localhost:3001/api/movies
-
-# frontend
-http://localhost:3000/
 ```
 
 ## Notice
