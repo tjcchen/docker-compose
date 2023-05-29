@@ -5,11 +5,13 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile.prod
+    image: vidly_web:1
     ports:
       - 80:80
     restart: unless-stopped
   api:
     build: ./backend
+    image: vidly_api:1
     ports:
       - 3001:3001
     environment:
