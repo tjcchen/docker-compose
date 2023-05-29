@@ -232,7 +232,7 @@ docker-compose -f docker-compose.prod.yml up -d --build
 ```
 
 ## Notice
-We need to switch node version 16.0 and below to run this backend service.
+We need to switch node version to 16.0 and below to run this backend service.
 
 ## License
 This project is licensed under the terms of the MIT License.
