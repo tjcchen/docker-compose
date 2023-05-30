@@ -1,4 +1,4 @@
-## docker-compose
+## Docker-Compose
 A full stack project with frontend, backend and database modules.
 
 ## Backend and Frontend Services
@@ -234,7 +234,7 @@ docker-compose -f docker-compose.prod.yml up -d --build
 ## Notice
 We need to switch node version to 16.0 and below to run this backend service.
 
-## TO DO LIST
+## To Do List
 Deploy this project with Docker CI/CD.
 
 ## License
